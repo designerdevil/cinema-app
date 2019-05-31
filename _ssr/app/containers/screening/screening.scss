@@ -1,0 +1,11 @@
+.result-container {
+    color: $color-white;
+    text-align: center;
+    .item {
+        padding-top: 15px;
+    }
+    img {
+        max-width: 100%;
+        border: 1px solid #909090;
+    }
+}

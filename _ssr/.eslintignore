@@ -1,0 +1,5 @@
+/compiled/**
+/public/**
+/webpack/**
+/api/promiseMiddleware.js
+/server/db/sequelize

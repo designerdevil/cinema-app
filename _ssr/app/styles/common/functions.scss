@@ -1,0 +1,32 @@
+@function rem($size) {
+    $remSize: $size / $base-font-size;
+    @return #{$remSize}rem;
+}
+
+@function stripUnit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+@function percent($itemSize, $containerSize: $full-grid-width-px) {
+    $size: (stripUnit($itemSize) / stripUnit($containerSize)) * 100%;
+
+    @return #{$size};
+}
+
+@function bootstrapWidth($numColumns) {
+    $columnsWidth: $grid-column-width-percent * $numColumns;
+    $guttersWidth: $grid-gutter-width-percent * ($numColumns - 1);
+    $width: $columnsWidth + $guttersWidth;
+
+    @return #{$width};
+}
+
+@function spacingUnits($numUnits, $baseUnit: 8px) {
+    $size: $numUnits * $baseUnit;
+
+    @return #{$size};
+}

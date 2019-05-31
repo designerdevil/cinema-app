@@ -1,0 +1,28 @@
+{
+  "extends": "stylelint-config-standard",
+  "defaultSeverity": "warning",
+  "rules": {
+    "indentation": 4,
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "selector-id-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "max-nesting-depth": 3,
+    "rule-empty-line-before": [ "always-multi-line", {"except": ["first-nested"]} ],
+    "declaration-block-single-line-max-declarations": 1,
+
+    "color-no-invalid-hex": [ true, {"severity": "error"} ],
+    "no-duplicate-selectors": [ true, {"severity": "error"} ],
+    "no-unknown-animations": [ true, {"severity": "error"} ],
+    "function-linear-gradient-no-nonstandard-direction": [ true, {"severity": "error"} ],
+    "string-no-newline": [ true, {"severity": "error"} ],
+    "unit-no-unknown": [ true, {"severity": "error"} ],
+    "property-no-unknown": [ true, {"severity": "error"} ],
+    "selector-pseudo-class-no-unknown": [ true, {"severity": "error"} ],
+    "selector-pseudo-element-no-unknown": [ true, {"severity": "error"} ],
+    "selector-type-no-unknown": [ true, {"severity": "error"} ],
+    "no-extra-semicolons": [ true, {"severity": "error"} ],
+    "no-invalid-double-slash-comments": [ true, {"severity": "error"} ],
+    "max-empty-lines": [ 3, {"ignore": "comments"} ],
+    "at-rule-no-unknown": [ true, {"severity": "warning", "ignoreAtRules": ["/include/", "/extend/", "/mixin/", "/function/", "/if/", "/return/", "/else/", "/content/", "/for/"]}],
+    "function-name-case": [ "lower", "ignoreFunctions": ["/^(([a-z][a-zA-Z]*)+)(-(([a-z][a-zA-Z]+)+))?(--(([a-z][a-zA-Z]+)+))?$/"] ]
+  }
+}

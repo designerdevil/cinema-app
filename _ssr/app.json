@@ -1,0 +1,15 @@
+{
+    "name": "Cinema SSR",
+    "description": "This is React Redux insomorphic rendering template ",
+    "keywords": [
+        "node",
+        "express",
+        "static",
+        "react",
+        "webpack4",
+        "Redux",
+        "TDD",
+        "Jest",
+        "Enzyme"
+    ]
+}

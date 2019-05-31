@@ -1,0 +1,22 @@
+// import all the custom scss files here
+
+// Common files
+@import 'common/fonts';
+@import 'common/variables';
+@import 'common/animation';
+@import 'common/mixins';
+@import 'common/breakpoints';
+@import 'common/functions';
+@import 'common/base';
+
+// common components
+@import '../components/common/header';
+@import '../components/common/search';
+
+// containers components
+@import '../containers/theater/theatre';
+@import '../containers/screening/screening';
+@import '../containers/movie-details/movie-details';
+
+// Pages
+@import '../pages/error-page/error-page';

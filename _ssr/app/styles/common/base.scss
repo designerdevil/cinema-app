@@ -1,0 +1,25 @@
+body {
+    background: $color-black;
+}
+
+.app-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.normaltext {
+    text-transform: none;
+}
+
+.center {
+    text-align: center;
+}

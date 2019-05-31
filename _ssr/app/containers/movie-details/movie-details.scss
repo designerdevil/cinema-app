@@ -1,0 +1,80 @@
+.movie-details {
+    color: $color-white;
+    padding-top: 20px;
+    text-align: center;
+    position: relative;
+    .item {
+        padding-top: 15px;
+    }
+    .seat-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 20px;
+    }
+    .seat-map {
+        border-bottom: 2px solid $color-dark-blue-2;
+    }
+    .back-to-screening {
+        position: absolute;
+        right: 20px;
+        color: $color-white;
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .seat {
+        span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: $color-dark-blue-2;
+            color: $color-dark-blue-2;
+            border: 1px solid #525252;
+        }
+        &.available {
+            span {
+                background: $color-dark-blue;
+                color: $color-dark-blue;
+                border-color: grey;
+            }
+        }
+        &.selected {
+            span {
+                background: $color-blue;
+                color: $color-blue;
+                border-color: $color-blue;
+            }
+        }
+    }
+    .seats-info {
+        display: inline-block;
+        float: right;
+    }
+    .movie-name {
+        text-align: left;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .timing {
+        text-align: left;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    button {
+        width: 100%;
+        padding: 17px;
+        background-color: $color-blue;
+        color: $color-white;
+        border: 0;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+}

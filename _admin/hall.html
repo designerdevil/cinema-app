@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MOVIE HALL - THEATRE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+        .timing-container {
+            padding: 10px 0;
+        }
+
+        .timing-container>div {
+            padding-bottom: 10px;
+        }
+
+        .form-buttons>* {
+            padding: 20px;
+            display: inline-block;
+        }
+
+        h3 a {
+            font-size: 12px;
+        }
+        fieldset {
+            position: relative;
+        }
+        img#poster {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 140px;
+        }
+        #poster + .form-group, #poster + .form-group ~ .form-group {
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1>AUDI / DATE</h1>
+    <form action="http://localhost:4001/api/v1/theatre/audi/create" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Hall Mapping</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="_theatreId">Choose Theatre</label>
+                <select id="_theatreId" name="_theatreId">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="movie_hall">Audi</label>
+                <input id="movie_hall" name="movie_hall" type="text" class="form-control input-md">
+            </div>
+
+            <div class="form-buttons">
+                <input type="submit" value="Submit">
+            </div>
+        </fieldset>
+    </form>
+    <script type="text/javascript">
+        const theatreCallback =  function(response) {
+            let template = ``;
+            const resJSON = JSON.parse(response);
+            if(resJSON.length){
+                resJSON.map((v,i)=>{
+                    template += `<option value="${v._id}">${v.theatreName}</option>`
+                })
+                document.getElementById("_theatreId").innerHTML = template;
+            } else {
+                document.getElementById("_theatreId").innerHTML = `<option value="0">No theatres</option>`;
+            }
+        }
+        const ajax = function (url, callback) {
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+                    if (xmlhttp.status == 200) {
+                        callback(xmlhttp.responseText)
+                    }
+                    else if (xmlhttp.status == 400) {
+                        alert('There was an error 400');
+                    }
+                    else {
+                        alert('something else other than 200 was returned');
+                    }
+                }
+            };
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+        
+        ajax('http://localhost:4001/api/v1/theatre/filter', theatreCallback, true)
+        
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+{
+    "verbose": false,
+    "watch": ["app", "app/routes.jsx", "server", "webpack"],
+    "exec": "npm run build:dev && node compiled/server.dev.js"
+}

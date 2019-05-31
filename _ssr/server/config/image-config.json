@@ -1,0 +1,35 @@
+{
+    "pixelImage": {
+        "imagePath": ""
+    },
+    "logo": {
+        "imagePath": ""
+    },
+    "logoMobile": {
+        "imagePath": ""
+    },
+    "errorBackgroundFour": {
+        "imagePath": ""
+    },
+    "errorBackgroundFourMobile": {
+        "imagePath": ""
+    },
+    "errorBackgroundFourDesktop": {
+        "imagePath": ""
+    },
+    "errorBackgroundFive": {
+        "imagePath": ""
+    },
+    "errorBackgroundFiveMobile": {
+        "imagePath": ""
+    },
+    "errorBackgroundFiveDesktop": {
+        "imagePath": ""
+    },
+    "oval": {
+        "imagePath": ""
+    },
+    "ovalMobile": {
+        "imagePath": ""
+    }
+}

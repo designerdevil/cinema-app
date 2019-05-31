@@ -1,0 +1,7 @@
+{
+    "cssExtension": false,
+    "componentMethods": ["componentDidMount", "shouldComponentUpdate", "onClick"],
+    "testFileName": "test",
+    "stylePath": "./app/styles/",
+    "styleFile": "app.scss"
+}

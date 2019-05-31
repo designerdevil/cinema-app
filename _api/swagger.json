@@ -1,0 +1,81 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "cinema API Service",
+        "description": "Documentation for cinema events",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/cinema": {
+            "post": {
+                "x-swagger-router-controller": "cinemaCreate",
+                "operationId": "cinemaCreate",
+                "tags": [
+                    "Create cinema"
+                ],
+                "description": "Create cinema",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "completed",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "targetDate",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string",
+                        "description": "mm/dd/yyyy format"
+                    },
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/cinema/filters?param=${param}&type=${type}": {
+            "get": {
+                "x-swagger-router-controller": "cinemaGetBy",
+                "operationId": "cinemaGetBy",
+                "tags": [
+                    "Get cinemas by filter"
+                ],
+                "description": "Get cinemas by filter TYPE['status','active','date','month', 'default by userid'] & PARAM for type provided",
+                "parameters": [
+                        {
+                        "name": "user",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "param",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

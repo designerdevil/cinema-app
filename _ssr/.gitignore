@@ -1,0 +1,14 @@
+node_modules
+compiled
+.idea
+coverage
+app/styles/*.css
+app/styles/*.css.map
+public
+npm-debug.log
+.tmp
+public
+*.swp
+.vscode
+*.DS_Store
+yarn-error.log
