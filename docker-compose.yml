@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  database:
+    image: mongo
+    container_name: cinema_db
+    ports:
+      - "27017:27017"
+
+  cinemaservice:
+    build: _api
+    container_name: cinema_service
+    ports:
+      - "4001:4001"
+    depends_on:
+      - database
+  
+  cinemaapp:
+    build: _ssr
+    container_name: cinema_application
+    ports:
+      - "9999:9999"
+    depends_on:
+      - cinemaservice
+  

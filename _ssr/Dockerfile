@@ -1,5 +1,5 @@
-FROM node:10.10.0
-EXPOSE 9999
+FROM node:8.11.3
+
 RUN mkdir -p /cinema
 RUN mkdir -p /deploy
 WORKDIR /cinema
@@ -21,16 +21,12 @@ COPY .eslintignore /cinema/.eslintignore
 COPY .stylelintignore /cinema/.stylelintignore
 COPY .stylelintrc /cinema/.stylelintrc
 
-# COPY compiled /cinema/compiled
-# COPY public /cinema/public
-# COPY package.json /cinema/package.json
-# COPY node_modules /cinema/node_modules
-
 RUN npm install && npm run build
+
+RUN cp -pr  public/assets/ compiled/assets/
 
 RUN cp -pr compiled public package.json node_modules /deploy
 
 WORKDIR /deploy
-RUN cp -pr  public/assets/ compiled/assets/
 
-CMD [ "npm", "run", "serve" ]
+CMD [ "node", "compiled/server.js" ]

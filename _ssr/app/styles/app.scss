@@ -1,22 +1,22 @@
 // import all the custom scss files here
 
 // Common files
-@import 'common/fonts';
-@import 'common/variables';
-@import 'common/animation';
-@import 'common/mixins';
-@import 'common/breakpoints';
-@import 'common/functions';
-@import 'common/base';
+@import 'common/fonts.scss';
+@import 'common/variables.scss';
+@import 'common/animation.scss';
+@import 'common/mixins.scss';
+@import 'common/breakpoints.scss';
+@import 'common/functions.scss';
+@import 'common/base.scss';
 
 // common components
-@import '../components/common/header';
-@import '../components/common/search';
+@import './app/components/common/_header.scss';
+@import './app/components/common/_search.scss';
 
 // containers components
-@import '../containers/theater/theatre';
-@import '../containers/screening/screening';
-@import '../containers/movie-details/movie-details';
+@import './app/containers/theater/_theatre.scss';
+@import './app/containers/screening/_screening.scss';
+@import './app/containers/movie-details/_movie-details.scss';
 
 // Pages
-@import '../pages/error-page/error-page';
+@import './app/pages/error-page/_error-page.scss';

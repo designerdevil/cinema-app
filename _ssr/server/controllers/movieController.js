@@ -13,7 +13,6 @@ export default (req, res, next) => {
             req.query.theater
         }${searchQuery}`
     };
-
     AjaxFactoryUtil.triggerServerRequest(options)
         .then(value => {
             const responseData = value.body && value.body.data;

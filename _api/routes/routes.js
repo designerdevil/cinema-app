@@ -24,8 +24,11 @@ const {
 } = require('../controllers/eventController');
 const apiURL = '/api/v1';
 
-module.exports = function(app) {
-
+module.exports = function (app) {
+    app.use(function (req, res, next) {
+        console.log(req.protocol + '://' + req.get('host') + req.originalUrl)
+        next();
+    });
     /* theatre REST API */
     app.post(`${apiURL}/theatre/create`, theatreCreate);
     app.patch(`${apiURL}/theatre/edit/:id`, theatreEdit);
@@ -49,6 +52,6 @@ module.exports = function(app) {
     app.get(`${apiURL}/event/populate/filter`, eventPopulatedFilter);
     app.get(`${apiURL}/event/filter`, eventFilter);
     app.get(`${apiURL}/date/filter`, dateFilter);
-    
+
 
 };

@@ -65,7 +65,7 @@ module.exports = {
 	},
 	theatreFilter: function (req, res, next) {
 		//find filter with id from filter collection
-		const id = req.params.id;
+		const id = (req.params && req.params.id) || false;
 		const findIt = id ? {_id: id} : {};
 		Theatre.find(findIt, function (err, theatres) {
 			if (err) return handleError(err);

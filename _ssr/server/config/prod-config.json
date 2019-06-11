@@ -1,19 +1,19 @@
 {
     "theatre": {
         "default": {
-            "url": "http://localhost:4001/api/v1/theatre/filter",
+            "url": "http://cinemaservice:4001/api/v1/theatre/filter",
             "method": "GET"
         }
     },
     "movie": {
         "default": {
-            "url": "http://localhost:4001/api/v1/movie/filter",
+            "url": "http://cinemaservice:4001/api/v1/movie/filter",
             "method": "GET"
         }
     },
     "seatSelect": {
         "default": {
-            "url": "http://localhost:4001/api/v1/movie/seats",
+            "url": "http://cinemaservice:4001/api/v1/movie/seats",
             "method": "GET"
         }
     }

@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "dev": "PORT=4001 nodemon ./server.js"
+        "dev": "PORT=4002 nodemon ./server.js",
+        "build": "PORT=4001 nodemon ./server.js"
     },
     "dependencies": {
         "cookie-parser": "~1.4.3",

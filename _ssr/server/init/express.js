@@ -1,5 +1,4 @@
 import express from 'express';
-import passport from 'passport';
 import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -9,36 +8,18 @@ import gzip from 'compression';
 import helmet from 'helmet';
 import { ENV } from '../../config/env';
 import axios from 'axios';
-import fs from 'fs';
 
-export default (app) => {
-    app.set('port', process.env.PORT || 9999);
+export default app => {
+    const port = process.env.PORT || '9999';
+    app.set('port', port);
     const clientConfig = {
         host: process.env.HOSTNAME || 'localhost',
-        port: process.env.PORT || '9999'
+        port
     };
     // configure baseURL for axios requests (for serverside API calls)
     axios.defaults.baseURL = `http://${'localhost'}:${clientConfig.port}`;
 
-    // if(ENV !== 'production') { //TODO: In final deployment we need to see that do we need to remove the comment from condition.
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-    // }
-
-    // -----------------------HTTPS----------------
-
-    /* const keys = fs.readFileSync('encryption/private.key');
-    const cert = fs.readFileSync('encryption/server.crt');
-    const https = require('https');
-    const options = {
-        key: keys,
-        cert: cert,
-        requestCert: true,
-        rejectUnauthorized: false,
-    };
-
-    https.createServer(options, app).listen(8888); */
-
-    //-------------------------------
 
     if (ENV === 'production') {
         app.use(gzip());

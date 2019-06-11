@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/cinema-experience',  { useNewUrlParser: true });
+mongoose.connect('mongodb://database:27017/cinema-experience', { useNewUrlParser: true });
 
 var db = mongoose.connection;
 

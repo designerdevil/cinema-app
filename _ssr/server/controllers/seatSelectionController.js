@@ -14,6 +14,7 @@ export default (req, res, next) => {
             defaultReqURLObject.url
         }?seats=${seats}&theater=${theater}&time=${time}&movie=${movie}&date=${date}`
     };
+    console.log(JSON.stringify(options));
     AjaxFactoryUtil.triggerServerRequest(options)
         .then(value => {
             const responseData = value.body && value.body.data;
