@@ -129,7 +129,7 @@
         "html-to-react": "^1.2.11",
         "inquirer": "^3.3.0",
         "install": "^0.10.1",
-        "lodash": "^4.16.2",
+        "lodash": "^4.17.19",
         "method-override": "^2.3.8",
         "passport": "^0.3.2",
         "passport-google-oauth": "^1.0.0",
